@@ -9,15 +9,6 @@ const utils = require('./global/utils');
 const bot = new discord.Client();
 const express = require('express');
 const app = express();
-const http = require('http');
-    app.get("/", (request, response) => {
-    console.log(`Music Is ready`);
-    response.sendStatus(200);
-    });
-    app.listen(process.env.PORT);
-    setInterval(() => {
-    http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-    }, 280000);
 require('./global/functions')(bot, utils, ytdl, config);
 
 bot.commands = new discord.Collection();
